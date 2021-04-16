@@ -24,8 +24,10 @@
 #### recommend
 - Used faiss library to create a set of L2 based similarity vectors between all the embeddings create from fastText model
 - Searched through similarity vectors to find the closest embeddings based on the given tiitle embeddings
-- Implemented two such recommendations: Global article recommendation and last 30 days recommedation
-###### Global Article Recommendation
-
+- Implemented two such recommendations: Global article recommendation and last 30 days recommendation
+##### Global Article Recommendation
+- This recommends 20 similar articles from all the articles, based on upvotes. Reranked using upvotes such that most upvotes shown first.
+##### 30 Day Recommendation
+- This recommends 5 similar articles from the last 30 days based on upvotes.  Reranked using upvotes such that most upvotes shown first
 
 ## Search and Ranking
