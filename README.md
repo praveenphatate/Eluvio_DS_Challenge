@@ -36,5 +36,7 @@
 - This recommends 20 similar articles from all the articles in the database. Reranked using up_votes such that most upvotes shown first.
 #### 30 Day Recommendation
 - This recommends 5 similar articles from the last 30 days based on upvotes.  Reranked using up_votes such that most upvotes shown first.
+## Evaluation
+Since there is no ground truth data like user interaction, impressions, likes and dislikes, there is no easy way to generate ground truth and evaluate the model. Hence, it is treated as an unsupervised learning problem. If there was ground truth data we could compare the generated recommendations/ranking and calculate the quality of my approach using metrics like NDCG(Normalized Discounted Cummalative Gain) and/or MAP(Mean Average Precision).
 
 
