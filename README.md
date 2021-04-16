@@ -16,21 +16,24 @@
 - pandas: Used for data manipulation and analysis
 - NumPy: Used for handling multi-dimensional arrays and matrices
 - nltk: Used for Natural Language preprocessing
-- fastText: Used for learning word embeddings and text classification which is created by Facebook's AI team
-- faiss: Used for efficient similarity search and clustering of word embeddings
-## Recommendation
+- fastText: Used for learning word embeddings and text classification which is created by Facebook's AI
+- faiss: Used for efficient similarity search and clustering of vector
+## Data Embedding Generation
 #### Preprocessing
-- Removed stopwords and performed stemming on titles
-- Appened time_created, date_created, author, processed titles in order to increase the similarity between same author
+- Removed stopwords and performed stemming on titles using nltk library
+- Appened time_created, date_created, author, processed titles in order to increase the similarity between articles published in and around the same date and same author
 #### fastText model
 - Trained a fastText with the preprocessed text with embedding size of 100, window size of 5, minimum word count of 5 for 25 epochs
-#### recommend
-- Used faiss library to create a set of L2 based similarity vectors between all the embeddings create from fastText model
-- Searched through similarity vectors to find the closest embeddings based on the given tiitle embeddings
-- Implemented two such recommendations: Global article recommendation and last 30 days recommendation
-##### Global Article Recommendation
-- This recommends 20 similar articles from all the articles, based on upvotes. Reranked using upvotes such that most upvotes shown first.
-##### 30 Day Recommendation
-- This recommends 5 similar articles from the last 30 days based on upvotes.  Reranked using upvotes such that most upvotes shown first
-
 ## Search and Ranking
+- Based on the search query entered by the user, the most relevant articles are shown. Reranked using date_created ordered by most recent articles to least recent articles
+  NOTE: time_created and up_votes can also be used in reranking. However, it's not implemented as of now. 
+## Recommendation System
+- Used faiss library to create a set of L2 based similarity index table between the embedding of traget article and embeddings of all other articles created from fastText model
+- Searched through similarity vectors to find the closest embeddings based on the given tiitle embeddings
+- Implemented two such recommendation approaches: Global article recommendation and last 30 days recommendation
+#### Global Article Recommendation
+- This recommends 20 similar articles from all the articles in the database. Reranked using up_votes such that most upvotes shown first.
+#### 30 Day Recommendation
+- This recommends 5 similar articles from the last 30 days based on upvotes.  Reranked using up_votes such that most upvotes shown first.
+
+
