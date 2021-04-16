@@ -9,7 +9,12 @@
 ![](fig/articles_monthly.png)
 - Total number of authors published monthly
 ![](fig/authors_monthly.png)
-
+###Libraries Used
+- pandas: Used for data manipulation and analysis
+- NumPy: Used for handling multi-dimensional arrays and matrices
+- nltk: Used for Natural Language preprocessing
+- fastText: Used for learning word embeddings and text classification which is created by Facebook's AI team
+- faiss: Used for efficient similarity search and clustering of word embeddings
 ## Recommendation
 
 ## Search and Ranking
