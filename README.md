@@ -9,12 +9,23 @@
 ![](fig/articles_monthly.png)
 - Total number of authors published monthly
 ![](fig/authors_monthly.png)
-###### Libraries Used
+#### Libraries Used
 - pandas: Used for data manipulation and analysis
 - NumPy: Used for handling multi-dimensional arrays and matrices
 - nltk: Used for Natural Language preprocessing
 - fastText: Used for learning word embeddings and text classification which is created by Facebook's AI team
 - faiss: Used for efficient similarity search and clustering of word embeddings
 ## Recommendation
+#### Preprocessing
+- Removed stopwords and performed stemming on titles
+- Appened time_created, date_created, author, processed titles in order to increase the similarity between same author
+#### fastText model
+- Trained a fastText with the preprocessed text with embedding size of 100, window size of 5, minimum word count of 5 for 25 epochs
+#### recommend
+- Used faiss library to create a set of L2 based similarity vectors between all the embeddings create from fastText model
+- Searched through similarity vectors to find the closest embeddings based on the given tiitle embeddings
+- Implemented two such recommendations: Global article recommendation and last 30 days recommedation
+###### Global Article Recommendation
+
 
 ## Search and Ranking
