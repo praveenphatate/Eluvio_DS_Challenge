@@ -9,7 +9,7 @@
 ![](fig/articles_monthly.png)
 - Total number of authors published monthly
 ![](fig/authors_monthly.png)
-###Libraries Used
+###### Libraries Used
 - pandas: Used for data manipulation and analysis
 - NumPy: Used for handling multi-dimensional arrays and matrices
 - nltk: Used for Natural Language preprocessing
