@@ -24,11 +24,12 @@
 - Appened time_created, date_created, author, processed titles in order to increase the similarity between articles published in and around the same date and same author
 #### fastText model
 - Trained a fastText with the preprocessed text with embedding size of 100, window size of 5, minimum word count of 5 for 25 epochs
+#### faiss
+- Creates a set of L2 based similarity index table between the embedding of traget keywords or article and embeddings of all other articles created from fastText model
 ## Search and Ranking
 - Based on the search query entered by the user, the most relevant articles are shown. Reranked using date_created ordered by most recent articles to least recent articles
   NOTE: time_created and up_votes can also be used in reranking. However, it's not implemented as of now. 
 ## Recommendation System
-- Used faiss library to create a set of L2 based similarity index table between the embedding of traget article and embeddings of all other articles created from fastText model
 - Searched through similarity vectors to find the closest embeddings based on the given tiitle embeddings
 - Implemented two such recommendation approaches: Global article recommendation and last 30 days recommendation
 #### Global Article Recommendation
